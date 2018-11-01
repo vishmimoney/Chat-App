@@ -6,7 +6,6 @@ const socketIO = require('socket.io');
 
 const app = express();
 
-
 app.use(express.static(appRootPath.resolve('app')));
 app.use(bodyParser.json());
 
@@ -17,14 +16,18 @@ app.get('/', (req, res) => {
 const server = http.createServer(app);
 const io = socketIO(server);
 
-io.on('connection', function(socket){
+io.on('connection', (socket) => {
     console.log('User connected');
 
-    socket.on('chat message', function(msg){
+    socket.on('chat message', (msg) => {
         io.emit('chat message', msg);
     });
 
-    socket.on('disconnect', function(){
+    socket.on('delete message', (msg) => {
+        io.emit('delete message', msg);
+    });
+
+    socket.on('disconnect', () => {
         console.log('User disconnected');
     });
 });
@@ -32,8 +35,3 @@ io.on('connection', function(socket){
 server.listen(process.env.PORT || '8080', () => {
     console.log('Server is listening');
 });
-
-
-
-
-

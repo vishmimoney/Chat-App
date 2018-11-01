@@ -10,14 +10,13 @@
     <script src="static/js/socket.io.min.js" type="text/javascript"></script>
 </head>
 <body ng-controller="chatWindowController">
-<div class = "row" ng-repeat="item in chatMessageQueue track by $index">
-    <div class="col-xs-12">{{item}}</div>
-</div>
+<chat-box></chat-box>
 <div class="row">
     <div class="col-xs-offset-4 col-xs-8"><input type="text" ng-model="chatMessage"></div>
     <div class="col-xs-offset-8 col-xs-4"><button ng-click="submitChatMessage()">Submit</button></div>
 </div>
 <script src="src/modules/chat-app.module.js"></script>
 <script src="src/controllers/chat-window.controller.js"></script>
+<script src="src/directives/chat-box.directive.js"></script>
 </body>
 </html>

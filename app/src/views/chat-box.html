@@ -1,0 +1,3 @@
+<div class = "row" ng-repeat="item in chatMessageQueue track by $index">
+    <div class="col-xs-12" ng-click="deleteChatMessage(item.id)">{{item.msg}}</div>
+</div>
