@@ -1,5 +1,5 @@
 (function(){
-    angular.module('chatApp').controller('chatWindowController', ['$scope', function ($scope){
+    angular.module('chatApp').controller('chatWindowController', ['$scope', 'uuid', function ($scope, uuid){
         $scope.chatMessage = '';
         $scope.chatMessageQueue = [];
         let date = new Date();
@@ -7,7 +7,7 @@
         const socket = io.connect();
 
         $scope.submitChatMessage = () => {
-            socket.emit('chat message', { msg: $scope.chatMessage, id: `${Math.round(Math.random() * 100000)}_${date.getTime()}` });
+            socket.emit('chat message', { msg: $scope.chatMessage, id: uuid.v4() });
             $scope.chatMessage = '';
         };
 

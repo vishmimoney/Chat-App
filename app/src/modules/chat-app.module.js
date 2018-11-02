@@ -1,3 +1,3 @@
 (function () {
-    angular.module('chatApp', []);
+    angular.module('chatApp', ['angular-uuid']);
 } ());
