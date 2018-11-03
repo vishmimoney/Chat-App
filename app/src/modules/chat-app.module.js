@@ -1,3 +1,3 @@
 (function () {
-    angular.module('chatApp', ['angular-uuid']);
+    angular.module('chatApp', ['angular-uuid', 'ngCookies', 'ngRoute']);
 } ());

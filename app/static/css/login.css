@@ -1,0 +1,22 @@
+ *{
+    font-family: 'Krub', sans-serif;
+}
+
+.login-title {
+    margin-top: 60px;
+}
+
+.login-name-input input {
+    color: white;
+    font-size: 32px !important;
+    padding: 15px !important;
+    padding-left: 0 !important
+}
+
+.login-name-input input:focus {
+    border-bottom: 1px solid white !important
+}
+
+.login-btn {
+    margin-top: 30px;
+}

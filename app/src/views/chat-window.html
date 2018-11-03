@@ -1,0 +1,17 @@
+<div ng-controller="chatWindowController">
+    <nav class="app-navbar">
+        <div class="nav-wrapper green darken-2 white-text">
+            <a class="brand-logo center" ng-cloak>{{userName}}</a>
+        </div>
+    </nav>
+    <div class="container">
+       <chat-box></chat-box>
+        <div id="chat-input" class="row no-margin-bottom">
+            <div class="col m8 offset-m2">
+                <div class="input-field col m12">
+                    <input placeholder="Press Enter to send" id="first_name" type="text" class="validate" ng-model="chatMessage" ng-enter="submitChatMessage()">
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

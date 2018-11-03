@@ -1,0 +1,29 @@
+.no-margin-bottom {
+    margin-bottom: 0 !important;
+}
+
+.chat-text {
+    padding: 20px !important;
+}
+
+.user-badge {
+    margin-bottom: 15px;
+}
+
+.chat-timstamp {
+    font-size: 80%
+}
+
+.delete-chat-btn {
+    cursor: pointer;
+}
+
+#chat-input input {
+    color: white;
+    border-bottom: 1px solid white;
+}
+
+#chat-input input:focus {
+    color: white;
+    border-bottom: 1px solid white;
+}

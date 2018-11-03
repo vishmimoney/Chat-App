@@ -1,13 +1,23 @@
 (function(){
-    angular.module('chatApp').controller('chatWindowController', ['$scope', 'uuid', function ($scope, uuid){
+    angular.module('chatApp').controller('chatWindowController', ['$scope', '$rootScope', 'uuid', '$cookies', '$location', function ($scope, $rootScope, uuid, $cookies, $location){
         $scope.chatMessage = '';
         $scope.chatMessageQueue = [];
         let date = new Date();
+        $scope.userName = $cookies.get('userName');
+
+        if (!$scope.userName) {
+            $location.path('/login');
+        }
 
         const socket = io.connect();
 
         $scope.submitChatMessage = () => {
-            socket.emit('chat message', { msg: $scope.chatMessage, id: uuid.v4() });
+            socket.emit('chat message', {
+                msg: $scope.chatMessage,
+                id: uuid.v4(),
+                userName: $scope.userName,
+                timestamp: date.getTime()
+            });
             $scope.chatMessage = '';
         };
 
