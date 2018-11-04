@@ -4,7 +4,9 @@ A simple chat application
 
 ## How it works
 
-A user can log in to the chat room providing a username. It enables the user to chat with the other users who have also joined the chat room.
+A user can join the chat room providing a username and he/she can send chat messages to other users who have also joined the chat room.
+
+When a user joins to the chat room a socket io connection will be established between the client and the server, and when a user sends a chat message, it will emit a chat message event and the event listener on the server will capture it. Upon the event capturing, the server will emit that event and all event listeners on the clients including the client of the user who initiated the message will capture it. That way all chat history will be available for all the clients and the chat window will be populated with the messages. Users can also delete the messages they have sent and it is implemented in the same way mentioned above.
 
 ## Design
 
@@ -31,6 +33,7 @@ UI and Frontend
 BFF (Backend for Frontend)
 
 * NodeJS
+* Socket.io
 
 Code Quality
 
@@ -47,8 +50,11 @@ Version Control
 
 ## Potential Improvements
 
-* Proper user authentication with proper session management. The current implementation uses only client-side cookies for user identification.
+* User authentication with proper session management. The current implementation uses only client-side cookies for user identification.
 * Data persistence (Chat history, Logged in users etc.)
 * Implement the capability to have multiple chat rooms
+* Provide user logout capability. This will be required when a proper user authentication mechanism is implemented.
+* Edit message (If necessary)
+* Delete message capability can be enhanced to provide capability to remove (hide) other users' messages only from logged in user's chat window. In the current implementation users can only delete the messages they have sent.
 
 
