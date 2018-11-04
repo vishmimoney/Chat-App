@@ -1,8 +1,8 @@
 <div class="row no-margin-bottom">
-    <div class="col m8 offset-m2">
+    <div class="col m8 s12 offset-m2">
         <div class="card-panel white chat-text z-depth-2" ng-repeat="item in chatMessageQueue track by $index">
             <div class="row no-margin-bottom">
-                <div class="col m12">
+                <div class="col m12 s12">
                     <div class="chip user-badge">
                         <img src="../../static/img/user.jpg" alt="Contact Person">
                         {{item.userName}}
@@ -11,12 +11,12 @@
                         <i class="material-icons green-text text-darken-2">cancel</i>
                     </div>
                 </div>
-                <div class="col m12">
+                <div class="col m12 s12">
                             <span class="green-text text-darken-2">
                                {{item.msg}}
                             </span>
                 </div>
-                <div class="col m12">
+                <div class="col m12 s12">
                             <span class="grey-text text-lighten-1 right chat-timstamp">
                                 <!--2018-11-03 at 09:46:34-->
                                 {{item.timestamp | date : 'medium'}}
