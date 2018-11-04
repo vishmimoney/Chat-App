@@ -5,11 +5,11 @@
         </div>
         <div class="col m8 s12 offset-m2">
             <div class="input-field col m12 s12 login-name-input">
-                <input autofocus id="user-name" type="text" class="validate center" ng-model="user.name">
+                <input autofocus id="user-name" type="text" class="validate center" ng-model="user.name" ng-enter="loginUser()">
             </div>
         </div>
         <div class="col m8 offset-m2 s12 center login-btn">
-            <a class="white green-text text-darken-2 waves-effect waves-green btn-large" ng-enter="loginUser()" ng-click="loginUser()">Join Chat Room</a>
+            <a class="white green-text text-darken-2 waves-effect waves-green btn-large"  ng-click="loginUser()">Join Chat Room</a>
         </div>
     </div>
 </div>
