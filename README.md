@@ -48,6 +48,14 @@ Version Control
 
 * Git - [https://github.com/vishmimoney/Chat-App](https://github.com/vishmimoney/Chat-App)
 
+## Deploying the application locally
+
+* Clone the repository.
+* Make sure you have node and npm installed. (note that the node version 8.11.1 and npm version 6.2.0 are preferred)
+* Run the command `npm install` to install all dependencies.
+* Run the command `node server` to start the server.
+* Go to http://localhost:8080 to access the application.
+
 ## Potential Improvements
 
 * User authentication with proper session management. The current implementation uses only client-side cookies for user identification.
@@ -55,6 +63,4 @@ Version Control
 * Implement the capability to have multiple chat rooms
 * Provide user logout capability. This will be required when a proper user authentication mechanism is implemented.
 * Edit message (If necessary)
-* Delete message capability can be enhanced to provide capability to remove (hide) other users' messages only from logged in user's chat window. In the current implementation users can only delete the messages they have sent.
-
-
+* Delete message capability can be enhanced to provide the capability to remove (hide) other users' messages only from logged in user's chat window. In the current implementation, users can only delete the messages they have sent.
