@@ -5,6 +5,7 @@
   "main": "index.js",
   "scripts": {
     "start": "node server",
+    "postinstall": "./node_modules/gulp/bin/gulp.js prod",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
@@ -13,18 +14,25 @@
     "node": "8.11.1"
   },
   "dependencies": {
-    "app-root-path": "^2.1.0",
-    "body-parser": "^1.18.3",
+    "app-root-path": "2.1.0",
+    "body-parser": "1.18.3",
     "express": "4.16.4",
     "socket.io": "2.1.1"
   },
   "devDependencies": {
+    "@babel/core": "7.1.2",
+    "@babel/preset-env": "7.1.0",
     "eslint": "5.8.0",
     "eslint-config-airbnb": "17.1.0",
     "eslint-plugin-import": "2.14.0",
     "eslint-plugin-jsx-a11y": "6.1.2",
     "eslint-plugin-react": "7.11.1",
     "gulp": "3.9.1",
-    "gulp-eslint": "5.0.0"
+    "gulp-babel": "8.0.0",
+    "gulp-concat": "2.6.1",
+    "gulp-eslint": "5.0.0",
+    "gulp-ng-annotate": "2.1.0",
+    "gulp-rename": "1.4.0",
+    "gulp-uglify": "3.0.1"
   }
 }

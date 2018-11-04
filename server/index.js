@@ -1,3 +1,5 @@
+/* eslint-disable no-console */
+
 const express = require('express');
 const http = require('http');
 const appRootPath = require('app-root-path');

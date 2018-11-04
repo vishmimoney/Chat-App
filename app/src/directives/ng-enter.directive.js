@@ -1,3 +1,5 @@
+/* eslint-disable no-undef, arrow-body-style */
+
 (function () {
     angular.module('chatApp').directive('ngEnter', () => {
         return function (scope, element, attrs) {

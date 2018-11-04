@@ -1,8 +1,10 @@
-(function(){
-    angular.module('chatApp').controller('chatWindowController', ['$scope', '$rootScope', 'uuid', '$cookies', '$location', function ($scope, $rootScope, uuid, $cookies, $location){
+/* eslint-disable no-undef */
+
+(function () {
+    angular.module('chatApp').controller('chatWindowController', ['$scope', '$rootScope', 'uuid', '$cookies', '$location', function ($scope, $rootScope, uuid, $cookies, $location) {
         $scope.chatMessage = '';
         $scope.chatMessageQueue = [];
-        let date = new Date();
+        const date = new Date();
         $scope.userName = $cookies.get('userName');
 
         if (!$scope.userName) {
@@ -23,9 +25,8 @@
 
         $scope.deleteChatMessage = (messageObj) => {
             if (messageObj.userName !== $scope.userName) {
-                M.toast({html: 'You can only delete the messages you sent!'});
-            }
-            else {
+                M.toast({ html: 'You can only delete the messages you sent!' });
+            } else {
                 socket.emit('delete message', messageObj.id);
             }
         };
@@ -38,9 +39,7 @@
 
         socket.on('delete message', (id) => {
             $scope.$apply(() => {
-                $scope.chatMessageQueue = $scope.chatMessageQueue.filter((e) => {
-                    return e.id !== id;
-                });
+                $scope.chatMessageQueue = $scope.chatMessageQueue.filter(e => e.id !== id);
             });
         });
     }]);
