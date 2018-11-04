@@ -21,8 +21,13 @@
             $scope.chatMessage = '';
         };
 
-        $scope.deleteChatMessage = (id) => {
-            socket.emit('delete message', id);
+        $scope.deleteChatMessage = (messageObj) => {
+            if (messageObj.userName !== $scope.userName) {
+                M.toast({html: 'You can only delete the messages you sent!'});
+            }
+            else {
+                socket.emit('delete message', messageObj.id);
+            }
         };
 
         socket.on('chat message', (messageObj) => {

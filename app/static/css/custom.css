@@ -27,3 +27,12 @@
     color: white;
     border-bottom: 1px solid white;
 }
+
+.app-navbar {
+    box-shadow: none !important;
+    margin: 20px;
+}
+
+.app-navbar * {
+    font-size: 24px !important
+}
